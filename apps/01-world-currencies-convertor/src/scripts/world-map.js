@@ -1,7 +1,3 @@
-//TODO: 3. Download and import SVG World Map as JavaScript
-
-//TODO: 3.1 SVG World Map as JavaScript
-
 document.querySelector(".world-map").innerHTML += `
 <svg
 baseprofile="tiny"
