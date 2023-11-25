@@ -14,9 +14,9 @@ body {
   color: #fff;
 }
 .app-container {
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   /* height: 100vh; */
 }
 .i-home {
