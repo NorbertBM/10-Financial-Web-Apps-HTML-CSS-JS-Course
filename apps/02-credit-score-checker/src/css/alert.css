@@ -1,0 +1,18 @@
+.alert {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 80px;
+  width: 90%;
+  margin: 0 2rem;
+  padding: 1rem;
+  font-size: 1.8rem;
+  text-align: center;
+  display: block;
+  border-radius: var(--border-radius);
+  animation: slideInFromTop 0.3s ease-in-out;
+}
+.alert-warning {
+  background-color: var(--warning-color);
+  color: #222;
+}

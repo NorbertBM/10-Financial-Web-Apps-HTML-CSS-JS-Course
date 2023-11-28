@@ -1,0 +1,17 @@
+@media screen and (max-width: 768px) {
+  .credit-score-container {
+    width: 100%;
+    margin: 0;
+  }
+  .result {
+    top: 230px;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    margin-top: 1rem;
+  }
+
+  .result.showResult {
+    animation: slideInFromTop 0.5s ease-in-out;
+  }
+}

@@ -1,0 +1,41 @@
+.result {
+  margin: 0 auto;
+  margin-top: 20vh;
+  width: 350px;
+  height: 300px;
+  background-color: var(--primary-color);
+  padding: 1rem;
+  font-size: 1.8rem;
+  text-align: center;
+  box-shadow: var(--box-shadow);
+  border-radius: var(--border-radius);
+  display: none;
+  .credit-score,
+  .credit-score-comment {
+    box-shadow: var(--box-shadow);
+    border-radius: var(--border-radius);
+    background-color: #333;
+    color: var(--warning-color);
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+  }
+  .credit-score {
+    font-size: 2.5rem;
+  }
+  .btn-close {
+    display: block;
+    background-color: var(--danger-color);
+    padding: 0.5rem 0.75rem;
+    width: 50%;
+    box-shadow: var(--box-shadow);
+    animation: slideInFromTop 0.3s ease-in-out;
+  }
+  &.showResult {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    animation: slideInFromLeft 0.5s ease-in-out;
+  }
+}
