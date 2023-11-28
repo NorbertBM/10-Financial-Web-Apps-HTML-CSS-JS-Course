@@ -5,7 +5,7 @@ window.onload = function () {
 
   const link = document.createElement("link");
   link.rel = "stylesheet";
-  link.href = "./css/main.css";
+  link.href = "/main.css";
   document.head.appendChild(link);
 
   //   Font Awesome Link
