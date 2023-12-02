@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../../links.js"></script>
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Retirement calculator</title>
+  </head>
+  <body>
+    <div class="app-container">
+      <h1 class="title">Retirement calculator</h1>
+      <div class="calculator-container">
+        <div class="form-group">
+          <input
+            type="number"
+            id="currentAge"
+            placeholder="Enter Current Age"
+          /><label for="currentAge">Current Age</label>
+        </div>
+        <div class="form-group">
+          <input
+            type="number"
+            id="retirementAge"
+            placeholder="Enter Retirement Age"
+          /><label for="retirementAge">Retirement Age</label>
+        </div>
+        <div class="form-group">
+          <input
+            type="number"
+            id="monthlySavings"
+            placeholder="Enter monthly savings"
+          /><label for="monthlySavings">Monthly Savings</label>
+        </div>
+        <div class="form-group">
+          <input
+            type="number"
+            id="interestRate"
+            placeholder="Enter annual interest rate"
+          />
+          <label for="interestRate">Annual Interest Rate (%)</label>
+        </div>
+        <div class="actions">
+          <button class="btn" id="calculateBtn">Calculate</button>
+          <button class="btn" id="add">Add</button>
+        </div>
+        <div id="result"></div>
+      </div>
+    </div>
+    <table
+      id="tableBody
+    "
+      class="d-none"
+    >
+      <tr>
+        <th>Current Age</th>
+        <th>Retirement Age</th>
+        <th>Monthly Savings</th>
+        <th>Annual Interest Rate (%)</th>
+        <th>Estimated Retirement Savings</th>
+      </tr>
+      <tbody></tbody>
+    </table>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

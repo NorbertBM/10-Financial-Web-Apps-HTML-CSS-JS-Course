@@ -1,0 +1,17 @@
+.alert {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: var(--border-radius);
+  text-align: center;
+  font-weight: 600;
+}
+.alert-danger {
+  background-color: var(--danger-bg-color);
+  border-color: var(--danger-border-color);
+  color: var(--danger-color);
+}
+.alert-success {
+  background-color: var(--success-bg-color);
+  border-color: var(--success-border-color);
+  color: var(--success-color);
+}
