@@ -18,3 +18,12 @@
 }
 
 /* Delete btn */
+
+.btn-delete {
+  background-color: transparent;
+  border: 1px solid var(--danger-color);
+  padding: 0.4rem;
+  &:hover {
+    background-color: var(--danger-color);
+  }
+}

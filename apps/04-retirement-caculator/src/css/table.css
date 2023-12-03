@@ -1,0 +1,24 @@
+#tableBody.d-none {
+  display: none;
+}
+#tableBody {
+  display: block;
+  margin: 0 auto;
+  background-color: var(--bg-color);
+  padding: 20px;
+  box-shadow: var(--box-shadow);
+  max-width: 600px;
+  border-radius: var(--border-radius);
+  animation: displayTable 1s ease-in-out;
+}
+
+.calculator-container.display {
+  animation: displayCalcContainer 1s ease-in-out;
+}
+
+td {
+  text-align: center;
+}
+tr:nth-child(even) {
+  backdrop-filter: brightness(1.5);
+}
