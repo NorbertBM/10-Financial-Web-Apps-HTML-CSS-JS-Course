@@ -1,0 +1,84 @@
+body {
+  height: 100%;
+}
+
+.short-news {
+  position: sticky;
+  top: 0;
+  left: 0;
+  height: 5vh;
+}
+.maps-chart {
+  & h3 {
+    text-align: center;
+    font-size: 2rem;
+  }
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+  .map {
+    background-color: #131722;
+    padding: 1rem;
+    border-radius: 5px;
+  }
+  display: none;
+  &.show {
+    display: flex;
+  }
+}
+.detailed-chart {
+  display: none;
+  &.show {
+    display: block;
+  }
+}
+.said-navigation {
+  position: fixed;
+  left: 0;
+  top: 30vh;
+  z-index: 2;
+  width: 120px;
+  display: grid;
+  grid-template-columns: 20px 100px;
+  align-items: center;
+  background-color: transparent;
+  .toggle-nav {
+    cursor: pointer;
+    background-color: rgb(148, 4, 4);
+    height: 90px;
+    display: flex;
+    align-items: center;
+    padding: 0.2rem;
+    transition: all 0.3s ease;
+    opacity: 0.3;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  .nav-items {
+    display: none;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0 0.8);
+    &.show {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    & li {
+      background-color: #131722;
+      font-weight: 600;
+      height: 45px;
+      padding: 0.5rem;
+      border-radius: 0 5px 5px 0;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      &:hover {
+        background-color: #34537c;
+      }
+      &.active {
+        background-color: #215ca8;
+      }
+    }
+  }
+}
