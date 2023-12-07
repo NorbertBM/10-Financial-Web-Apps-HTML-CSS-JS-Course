@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../../links.js"></script>
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Budget Planner</title>
+  </head>
+  <body>
+    <div id="app" class="app-container">
+      <h1 class="app-title">Budget planner</h1>
+      <div class="header-container">
+        <div>
+          <label for="category">Select Category</label>
+          <select id="category">
+            <option value="income">Income</option>
+            <option value="home_utilities">Home & Utilities</option>
+            <option value="insurance_financial">Insurance & Financial</option>
+            <option value="groceries">Groceries</option>
+            <option value="personal_medical">Personal & Medical</option>
+            <option value="entertainment_eat_out">
+              Entertainment & Eat-out
+            </option>
+            <option value="transport_auto">Transport & Auto</option>
+            <option value="children">Children</option>
+          </select>
+        </div>
+        <section class="actions">
+          <button class="btn" id="loadButton">
+            <i class="fa-solid fa-rotate-right"></i></button
+          ><button class="btn" id="saveButton">
+            <i class="fa-solid fa-floppy-disk"></i>
+          </button>
+        </section>
+      </div>
+
+      <section class="inputs-container">
+        <div class="input-values">
+          <input type="text" id="name" placeholder="Income / Expanse" />
+          <input type="number" id="amount" placeholder="Amount" />
+        </div>
+        <button id="addButton" class="btn">ADD</button>
+      </section>
+      <div id="total">Total: $ <span id="totalAmount">0</span></div>
+    </div>
+    <script src="./scripts/script.js"></script>
+  </body>
+</html>
