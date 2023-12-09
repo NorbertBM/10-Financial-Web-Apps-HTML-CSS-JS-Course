@@ -1,0 +1,75 @@
+.bar {
+  width: 100%;
+  padding-left: 1rem;
+  font-size: 0.9rem;
+  animation: bar 1s ease-in-out;
+  border-radius: 0 5px 5px 0;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  & span {
+    display: inline-block;
+    height: 40px;
+    padding-left: 1rem;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0 5px 5px 0;
+  }
+}
+@keyframes bar {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.savings-amount-bar {
+  color: #222;
+  display: grid;
+  padding-left: 0;
+  justify-content: center;
+  text-shadow: none;
+  & span {
+    display: flex;
+    flex-direction: column;
+    &:first-child {
+      background-color: var(--savings-color);
+      color: #fff;
+      border-radius: 0;
+    }
+    &:last-child {
+      background-color: var(--left-to-save-color);
+      color: var(--main-color);
+    }
+  }
+}
+
+.monthly-contribution-bar {
+  background-color: var(--monthly-contribution-color);
+  color: var(--main-color-darker);
+  display: grid;
+
+  & span {
+    &:first-child {
+      background-color: inherit;
+      color: #fff;
+      border-radius: 0;
+    }
+    &:last-child {
+      background-color: #f8bd64;
+      /* color: var(--main-color); */
+    }
+  }
+}
+
+#interestRateRange {
+  & b {
+    color: var(--monthly-contribution-color);
+    &:last-child {
+      color: var(--savings-color);
+    }
+  }
+}
