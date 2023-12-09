@@ -1,0 +1,18 @@
+:root {
+  /* Main color */
+  --main-color: #ddd;
+  --main-color-light: #fff;
+  --main-color-dark: #333;
+  --main-color-darker: #000;
+
+  /* Result color */
+  --goal-color: #2196f3;
+  --savings-color: #4caf50;
+  --left-to-save-color: #e8608b;
+  --monthly-contribution-color: #ff9800;
+
+  /* Shadows */
+
+  --shadow: 0 2px 5px var(--main-color-dark);
+  --shadow-light: 0 2px 5px var(--main-color-light);
+}

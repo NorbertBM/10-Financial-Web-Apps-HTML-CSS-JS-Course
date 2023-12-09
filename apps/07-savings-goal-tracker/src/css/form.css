@@ -1,0 +1,50 @@
+.parameters-form {
+  margin: 50px auto;
+  width: 400px;
+  background-color: var(--main-color-darker);
+  color: var(--main-color);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+
+  .form-group {
+    border: 1px solid #666;
+    margin-bottom: 0.5rem;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: var(--shadow);
+    & label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+    & input[type="number"] {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+    }
+    & small {
+      display: block;
+      font-weight: 600;
+      color: var(--left-to-save-color);
+    }
+
+    & label[for="interest-rate"] {
+      cursor: pointer;
+      pointer-events: none;
+      color: gray;
+      transition: all 0.2s ease-in-out;
+      &.active {
+        color: #ddd;
+        &:hover {
+          color: var(--goal-color);
+        }
+      }
+    }
+    & input[type="checkbox"] {
+      display: none;
+    }
+  }
+}
