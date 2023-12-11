@@ -1,0 +1,47 @@
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    gap: 10px;
+    & input {
+      width: 100%;
+      border-radius: 5px;
+      border: none;
+      border: 1px solid var(--main-color-darker);
+      padding: 0.5rem;
+      font-size: 1.2rem;
+      text-align: center;
+
+      &#loan-amount-input {
+        background-color: var(--loan-color);
+        &::placeholder {
+          color: #333;
+        }
+      }
+      &[type="range"] {
+        -webkit-appearance: none;
+        width: 100%;
+        cursor: pointer;
+        height: 2px;
+      }
+      &#loan-amount-slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 25px;
+        height: 25px;
+        background-color: var(--loan-color);
+      }
+      /* &#interest-reate-slider::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 25px;
+        height: 25px;
+        background-color: var(--interest-color);
+      } */
+    }
+  }
+}

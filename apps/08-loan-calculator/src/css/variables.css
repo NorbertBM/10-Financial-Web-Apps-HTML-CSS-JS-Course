@@ -1,0 +1,10 @@
+:root {
+  --main-color: #123866;
+  --main-color-light: #ff7e5f;
+  --main-color-dark: #6d0000;
+  --main-color-darker: #3f0000;
+  --bg-color: var(--main-color);
+  --loan-color: #7ecef9;
+  --interest-color: #ff6384;
+  --box-shadow: 0 5px 7px rgba(0, 0, 0, 0.5);
+}

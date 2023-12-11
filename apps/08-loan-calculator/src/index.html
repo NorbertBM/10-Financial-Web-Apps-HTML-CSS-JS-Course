@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="../../links.js"></script>
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Loan calculator</title>
+  </head>
+  <body>
+    <div class="app-container">
+      <form action="">
+        <h2>Loan conditions:</h2>
+        <div class="form-group">
+          <input
+            type="number"
+            id="loan-amount-input"
+            placeholder="Loan amount:"
+          />
+          <input
+            type="range"
+            id="loan-amount-slider"
+            min="0"
+            max="10000000"
+            value="0"
+            step="100"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="number"
+            id="interest-rate-input"
+            placeholder="Interest Rate"
+          />
+          <input
+            type="range"
+            id="interest-reate-slider"
+            value="0"
+            min="0"
+            max="30"
+            step="0.1"
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="number"
+            id="loan-term-input"
+            placeholder="Loan terms (in years)"
+          />
+          <input
+            type="range"
+            id="loan-term-slider"
+            value="0"
+            min="0"
+            max="35"
+            step="0"
+          />
+        </div>
+      </form>
+      <div id="result" class="results">
+        <h2>Please Add:</h2>
+        <h3>test</h3>
+        <h3>test</h3>
+        <h3>test</h3>
+      </div>
+      <div class="chart-container">
+        <h2>Chart</h2>
+        <canvas id="myChart"></canvas>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="module" src="./module/app.js"></script>
+  </body>
+</html>

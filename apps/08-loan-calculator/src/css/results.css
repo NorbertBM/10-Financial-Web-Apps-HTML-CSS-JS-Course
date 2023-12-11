@@ -1,0 +1,25 @@
+.results {
+  height: 300px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-bottom: 2rem;
+
+  & h3 {
+    border: 1px solid var(--main-color-light);
+    border-radius: 15px;
+    padding: 0.5rem 1rem;
+    box-shadow: var(--box-shadow);
+    background-color: #eee;
+    color: var(--main-color-light);
+    text-shadow: #222;
+    &.monthly-payment {
+      background-color: #222;
+      color: var(--loan-color);
+    }
+    &.interest {
+      color: var(--interest-color);
+    }
+  }
+}
