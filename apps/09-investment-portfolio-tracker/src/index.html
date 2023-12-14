@@ -32,14 +32,14 @@
             </button>
           </header>
           <ul id="investment-list">
-            <li class="investment-list-item">
+            <!-- <li class="investment-list-item">
               <p>data</p>
               <b>$0.00</b>
               <div class="investment-actions">
                 <i class="edit fa-solid fa-pen-to-square"></i>
                 <i class="delete fa-solid fa-trash"></i>
               </div>
-            </li>
+            </li> -->
           </ul>
           <div id="total-invested" class="result">
             <span>Total invested amount:</span> <span>$0.00</span>
@@ -54,13 +54,13 @@
             <input type="text" id="name" placeholder="Stock name" />
           </div>
           <div class="stock-quantities">
-            <input type="number" placeholder="Shares" id="shares" />
+            <input type="text" placeholder="Shares" id="shares" />
             <input
-              type="number"
+              type="text"
               placeholder="Buy-in price"
               id="buy-in-price"
             /><input
-              type="number"
+              type="text"
               placeholder="Current price"
               id="current-price"
             />
@@ -69,7 +69,7 @@
         </form>
       </section>
       <section class="portfolio">
-        <h2>Portfolio</h2>
+        <h2>Stock Portfolio</h2>
         <div class="portfolio-table-container">
           <table>
             <thead id="portfolio-table">
@@ -100,8 +100,12 @@
         </div>
         <div class="result">
           <div class="analysis-results">
-            <h2 class="analysis-gain-loss">Gain/Loss: <span>$0.00</span></h2>
-            <h2 class="analysis-return">Return: <span>$0.00</span></h2>
+            <h2 class="analysis-gain-loss">
+              Gain/Loss: <span class="value">$0.00</span>
+            </h2>
+            <h2 class="analysis-return">
+              Return: <span class="value">$0.00</span>
+            </h2>
           </div>
           <div class="pie-chart-container">
             <canvas id="pie-chart" width="200" height="200"> </canvas>
