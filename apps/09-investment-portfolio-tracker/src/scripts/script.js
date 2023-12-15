@@ -395,10 +395,8 @@ analysisBtn.onclick = () => {
   const analysisReturn = document.querySelector(".analysis-return .value");
   analysisReturn.innerHTML = `$${calculateTotalReturn().toFixed(2)}`;
 
-  // showPieChart();
+  showPieChart();
 };
-
-function showPieChart() {}
 
 // Show Alerts
 
@@ -417,3 +415,102 @@ function showAlert(message, type, parentElement = document.body) {
 function formatNumberWithPeriods(number) {
   return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
 }
+
+function showPieChart() {
+  let sliceA = 30;
+  let sliceB = 70;
+  // use values
+
+  sliceA = { size: getTotalInvested(), color: "#e67e22" };
+  sliceB = { size: getPortfolioTotalValue(), color: "#3498bd" };
+
+  const values = [sliceA.size, sliceB.size];
+
+  const total = values.reduce((acc, val) => acc + val, 0);
+
+  let startAngle = 0;
+
+  const canvas = document.getElementById("pie-chart");
+
+  const ctx = canvas.getContext("2d");
+
+  // Calc Angles
+
+  values.forEach((value, index) => {
+    const angle = (value / total) * Math.PI * 2;
+
+    // Draw a slice
+
+    ctx.beginPath();
+    ctx.moveTo(canvas.width / 2, canvas.height / 2);
+    ctx.arc(
+      canvas.width / 2,
+      canvas.height / 2,
+      canvas.width / 2,
+      startAngle,
+      startAngle + angle
+    );
+
+    ctx.closePath();
+
+    ctx.fillStyle = index === 0 ? sliceA.color : sliceB.color;
+
+    ctx.fill();
+
+    startAngle += angle;
+
+    ctx.fillStyle = "white";
+    ctx.font = "20px Arial";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
+    ctx.fillText(`TOTAL`, canvas.width / 2, canvas.height / 2);
+
+    // Show Legend
+
+    const legend = document.getElementById("pie-chart-legend");
+
+    legend.innerHTML = `
+
+<li class="legend-item">
+<div class="legend-color" style="background-color:${sliceA.color}"></div>
+<div class="legend-label"> Total Invested: $${sliceA.size} - ${(
+      (sliceA.size / total) *
+      100
+    ).toFixed(2)} %</div>
+</li>
+
+<li class="legend-item">
+<div class="legend-color" style="background-color:${sliceB.color}"></div>
+<div class="legend-label"> Total Invested: $${sliceB.size} - ${(
+      (sliceB.size / total) *
+      100
+    ).toFixed(2)} %</div>
+</li>
+
+`;
+  });
+}
+
+// Save investment list to CSV
+
+const saveInvestmentsBtn = document.getElementById("save-investment-btn");
+
+saveInvestmentsBtn.onclick = () => {
+  console.log("click");
+  const investmentData = JSON.parse(localStorage.getItem("investments")) || [];
+
+  const csv = investmentData.map((investment) => {
+    return `${investment.date},${investment.amount}`;
+  });
+
+  csv.unshift("date,amount");
+
+  const csvData = csv.join("\n");
+  const CSVBlob = new Blob([csvData], { type: "text/csv" });
+  const csvUrl = URL.createObjectURL(CSVBlob);
+  const csvA = document.createElement("a");
+
+  csvA.href = csvUrl;
+  csvA.download = "investments.csv";
+  csvA.click();
+};
