@@ -20,6 +20,50 @@ let total = 0;
 function saveData() {
   localStorage.setItem("budgetData", JSON.stringify(budgetData));
 }
+
+// TODO: Auto save
+
+setInterval(() => {
+  saveData();
+  showAlert(
+    `<i class="fa-solid fa-hourglass-start"></i> Auto save to local storage`,
+    "confirm"
+  );
+}, 60000);
+
+// TODO: Save as JSON
+document.querySelector("#saveToJSONBtn").onclick = () => {
+  const data = JSON.stringify(budgetData);
+
+  const blob = new Blob([data], { type: "application/json" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "budgetData.json";
+  a.click();
+  URL.revokeObjectURL(url);
+};
+
+// TODO: Save as CSV
+
+document.querySelector("#saveToCSVBtn").onclick = () => {
+  const data = budgetData.map((item) => [
+    item.name,
+    item.amount,
+    item.category,
+  ]);
+
+  data.unshift(["Name", "Amount", "Category"]);
+  const csv = data.map((row) => row.join(",")).join("\n");
+  const blob = new Blob([csv], { type: "text/csv" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "budgetData.csv";
+  a.click();
+  URL.revokeObjectURL(url);
+};
+
 function loadData() {
   const data = localStorage.getItem("budgetData");
   if (data) {
@@ -27,6 +71,27 @@ function loadData() {
     updateBudgetList();
   }
 }
+// TODO: Load NEW JSON file
+document.querySelector("#loadFileBtn").onclick = () => {
+  const input = document.createElement("input");
+  input.type = "file";
+  input.accept = ".json";
+  input.style.display = "none";
+
+  input.onchange = (event) => {
+    const file = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = (e) => {
+      budgetData = JSON.parse(e.target.result);
+      updateBudgetList();
+      calculateTotal();
+      showAlert("Data loaded", "success");
+    };
+    reader.readAsText(file);
+  };
+  input.click();
+};
 
 document.addEventListener("DOMContentLoaded", () => {
   loadData(), calculateTotal();

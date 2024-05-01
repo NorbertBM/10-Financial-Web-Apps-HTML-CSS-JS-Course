@@ -1,5 +1,5 @@
 window.onload = function () {
-  // console.log("links");
+  console.log("links");
 
   //  Main CSS Link
 

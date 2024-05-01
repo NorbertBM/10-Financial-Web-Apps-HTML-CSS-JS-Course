@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="../../links.js"></script>
+    <link rel="stylesheet" href="../../main.css" />
     <link rel="stylesheet" href="./css/style.css" />
     <title>Budget Planner</title>
   </head>
@@ -27,11 +28,26 @@
           </select>
         </div>
         <section class="actions">
-          <button class="btn" id="loadButton">
-            <i class="fa-solid fa-rotate-right"></i></button
-          ><button class="btn" id="saveButton">
-            <i class="fa-solid fa-floppy-disk"></i>
-          </button>
+          <div class="action-load">
+            <button class="btn" id="loadButton">
+              <i class="fa-solid fa-rotate-right"></i>
+            </button>
+            <button class="btn" id="loadFileBtn">
+              <i class="fa-solid fa-network-wired"></i>
+            </button>
+          </div>
+
+          <div class="action-save">
+            <button class="btn" id="saveButton">
+              <i class="fa-solid fa-floppy-disk"></i>
+            </button>
+            <button class="btn" id="saveToJSONBtn">
+              <i class="fa-solid fa-file"></i>
+            </button>
+            <button class="btn" id="saveToCSVBtn">
+              <i class="fa-solid fa-file-excel"></i>
+            </button>
+          </div>
         </section>
       </div>
 
